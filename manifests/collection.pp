@@ -15,7 +15,7 @@ define scl::collection
 
 {
     # Specific versions are allowed.
-    if count( $os_versions ) > 0 and member( $os_versions, $::operatingsystemmajrelease ) == false {
+    if count( $os_versions ) > 0 and member( $os_versions, (0 + $::operatingsystemmajrelease) ) == false {
         fail(
             join( [
                 "Unsupported OS major release ${::operatingsystemmajrelease}. ",
